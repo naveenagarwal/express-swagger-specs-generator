@@ -1,0 +1,39 @@
+{
+  "name": "express-swagger-specs-generator",
+  "version": "0.0.1",
+  "description": "Package to generate the OpenAPI 2.0 swagger specs automatically for the given model in command line arguments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ssg": "./bin/ssg.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/naveenagarwal/express-swagger-specs-generator.git"
+  },
+  "keywords": [
+    "express",
+    "swagger",
+    "swagger-specs",
+    "swagger-specs-generator",
+    "generator",
+    "model-specs-generator",
+    "CRUD-specs-generator",
+    "OpenAPI",
+    "OpenAPI2.0",
+    "swagger-api-specs"
+  ],
+  "author": "Naveen Agarwal",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/naveenagarwal/express-swagger-specs-generator/issues"
+  },
+  "homepage": "https://github.com/naveenagarwal/express-swagger-specs-generator#readme",
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "shelljs": "^0.8.3",
+    "swagger-jsdoc": "^3.4.0"
+  }
+}
