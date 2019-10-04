@@ -7,11 +7,17 @@ module.exports = (name, attributes, routePath) => `
  *    ${name}:
  *      properties:
  *        ${util.getProperties(attributes, 4)}
- *    ${name}withid:
+ *    ${name}response:
  *      properties:
  *        id:
  *          type: integer
  *        ${util.getProperties(attributes, 4)}
+ *        createdAt:
+ *          type: string
+ *          format: date-time
+ *        updatedAt:
+ *          type: string
+ *          format: date-time
  */
 
  /**
@@ -30,7 +36,7 @@ module.exports = (name, attributes, routePath) => `
  *              data:
  *                type: array
  *                items:
- *                  $ref: '#/definitions/${name}withid'
+ *                  $ref: '#/definitions/${name}response'
  *              pageInfo:
  *                 type: object
  *                 properties:
@@ -58,7 +64,7 @@ module.exports = (name, attributes, routePath) => `
  *            properties:
  *              data:
  *                type: object
- *                $ref: '#/definitions/${name}withid'
+ *                $ref: '#/definitions/${name}response'
  *
  * /${routePath}/{id}:
  *    get:
@@ -80,7 +86,7 @@ module.exports = (name, attributes, routePath) => `
  *            properties:
  *              data:
  *                type: object
- *                $ref: '#/definitions/${name}withid'
+ *                $ref: '#/definitions/${name}response'
  *        404:
  *          description: ${name} not found
  *          content: {}
@@ -104,7 +110,7 @@ module.exports = (name, attributes, routePath) => `
  *            properties:
  *              data:
  *                type: object
- *                $ref: '#/definitions/${name}withid'
+ *                $ref: '#/definitions/${name}response'
  *        404:
  *          description: ${name} not found
  *          content: {}
@@ -135,7 +141,7 @@ module.exports = (name, attributes, routePath) => `
  *            properties:
  *              data:
  *                type: object
- *                $ref: '#/definitions/${name}withid'
+ *                $ref: '#/definitions/${name}response'
  *        404:
  *          description: ${name} not found
  *          content: {}
