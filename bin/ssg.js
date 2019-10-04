@@ -3,16 +3,15 @@
 console.log("Generating swagger specs.");
 
 const fs = require("fs");
-const shell = require('shelljs');
 const commandLineArgs = require('command-line-args');
-const { util } = require('../lib/index');
 
 const cwd = process.cwd();
 
 // read command line options
 const optionDefinitions = [
     { name: 'name', alias: 'n', type: String },
-    { name: 'filepath', alias: 'f', type: String }
+    { name: 'filepath', alias: 'f', type: String },
+    { name: 'force', type: Boolean, defaultValue: false }
   ];
 const options = commandLineArgs(optionDefinitions);
 
@@ -24,7 +23,7 @@ const path = cwd + '/api-specs';
 const Swagger = require('../lib/swagger');
 const swagger = new Swagger(options.name, attributes, path);
 swagger.init();
-swagger.generateSpecFile();
+swagger.generateSpecFile(options.force);
 swagger.generateSwaggerJSONFile();
 
 // safe exit

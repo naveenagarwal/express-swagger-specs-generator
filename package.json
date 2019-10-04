@@ -1,5 +1,5 @@
 {
-  "name": "express-swagger-specs-generator",
+  "name": "@amiadeveloper/express-swagger-specs-generator",
   "version": "0.0.1",
   "description": "Package to generate the OpenAPI 2.0 swagger specs automatically for the given model in command line arguments.",
   "main": "index.js",
