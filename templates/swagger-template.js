@@ -48,11 +48,11 @@ module.exports = (name, attributes, routePath) => `
  *          schema:
  *            type: object
  *            properties:
- *              User:
+ *              ${name}:
  *                $ref: '#/definitions/${name}'
  *      responses:
  *        200:
- *          description: save user
+ *          description: save ${name}
  *          schema:
  *            $ref: '#/definitions/${name}withid'
  *
@@ -105,7 +105,7 @@ module.exports = (name, attributes, routePath) => `
  *          schema:
  *            type: object
  *            properties:
- *              User:
+ *              ${name}:
  *                $ref: '#/definitions/${name}'
  *      responses:
  *        200:
