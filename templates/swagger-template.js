@@ -54,7 +54,11 @@ module.exports = (name, attributes, routePath) => `
  *        200:
  *          description: save ${name}
  *          schema:
- *            $ref: '#/definitions/${name}withid'
+ *            type: object
+ *            properties:
+ *              data:
+ *                type: object
+ *                $ref: '#/definitions/${name}withid'
  *
  * /${routePath}/{id}:
  *    get:
@@ -72,7 +76,15 @@ module.exports = (name, attributes, routePath) => `
  *        200:
  *          description: get ${name}
  *          schema:
- *            $ref: '#/definitions/${name}withid'
+ *            type: object
+ *            properties:
+ *              data:
+ *                type: object
+ *                $ref: '#/definitions/${name}withid'
+ *        404:
+ *          description: ${name} not found
+ *          content: {}
+ *
  *    delete:
  *      description: remove ${name} with id
  *      produces:
@@ -88,7 +100,15 @@ module.exports = (name, attributes, routePath) => `
  *        200:
  *          description: delete ${name}
  *          schema:
- *            $ref: '#/definitions/${name}withid'
+ *            type: object
+ *            properties:
+ *              data:
+ *                type: object
+ *                $ref: '#/definitions/${name}withid'
+ *        404:
+ *          description: ${name} not found
+ *          content: {}
+ *
  *    put:
  *      description: update ${name} with id
  *      produces:
@@ -111,6 +131,13 @@ module.exports = (name, attributes, routePath) => `
  *        200:
  *          description: update ${name}
  *          schema:
- *            $ref: '#/definitions/${name}withid'
+ *            type: object
+ *            properties:
+ *              data:
+ *                type: object
+ *                $ref: '#/definitions/${name}withid'
+ *        404:
+ *          description: ${name} not found
+ *          content: {}
  */
 `;
