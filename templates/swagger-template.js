@@ -12,12 +12,6 @@ module.exports = (name, attributes, routePath) => `
  *        id:
  *          type: integer
  *        ${util.getProperties(attributes, 4)}
- *        createdAt:
- *          type: string
- *          format: date-time
- *        updatedAt:
- *          type: string
- *          format: date-time
  */
 
  /**
